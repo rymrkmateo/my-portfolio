@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Raymark Mateo Satingasin, BSIT student focused on web development, mobile apps and UI design.">
+
+    <title>Raymark Mateo Satingasin | Portfolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="raymark.css">
+</head>
+
+<body>
+
+    <div class="progress" id="progress"></div>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="container nav-inner">
+            <a href="#home" class="logo">Raymark<span>.</span></a>
+
+            <ul id="menu">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <div class="nav-right">
+                <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch to dark mode">🌙</button>
+                <button class="icon-btn menu-toggle" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu">☰</button>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- HOME -->
+    <section id="home">
+        <div class="container hero">
+
+            <div class="hero-text">
+                <h1>Raymark Mateo Satingasin</h1>
+
+                <p class="hero-role">BSIT student &amp; <span class="typed" id="typed" aria-label="web developer">web developer</span></p>
+
+                <p>
+                    I'm an Information Technology student who builds websites,
+                    mobile apps and system prototypes that solve real problems.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#projects" class="btn">View my projects</a>
+                    <a href="#contact" class="btn btn-outline">Contact me</a>
+                </div>
+            </div>
+
+            <div class="profile">
+                <img src="raymark.jpg" alt="Portrait of Raymark Mateo Satingasin">
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ABOUT -->
+    <section id="about">
+        <div class="container">
+
+            <div class="section-title">
+                <h2>About me</h2>
+            </div>
+
+            <div class="about-grid">
+
+                <div class="about-text">
+                    <p>
+                        I'm a 2nd year Information Technology student who enjoys
+                        learning how software and computer systems work, then turning
+                        that knowledge into projects people can actually use.
+                    </p>
+
+                    <p>
+                        My recent work covers a fun run management system, a mobile
+                        app built with Kodular, and a Figma prototype. I want to keep
+                        sharpening my programming skills and grow into a professional
+                        developer.
+                    </p>
+                </div>
+
+                <ul class="facts">
+                    <li><strong>Course</strong>BS Information Technology</li>
+                    <li><strong>Year level</strong>2nd year</li>
+                    <li><strong>School</strong>Central Philippines State University</li>
+                    <li><strong>Interests</strong>Web development, mobile apps, UI design</li>
+                </ul>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- SKILLS -->
+    <section id="skills">
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Skills</h2>
+                <p>Tools and abilities I use in my projects.</p>
+            </div>
+
+            <div class="skills-container">
+
+                <div class="skill-group">
+                    <h3>Web development</h3>
+                    <p>Building responsive pages and websites.</p>
+                    <ul class="tags">
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>Responsive design</li>
+                    </ul>
+                </div>
+
+                <div class="skill-group">
+                    <h3>Mobile app development</h3>
+                    <p>Creating Android apps with block-based tools.</p>
+                    <ul class="tags">
+                        <li>Kodular</li>
+                        <li>App logic</li>
+                        <li>App testing</li>
+                    </ul>
+                </div>
+
+                <div class="skill-group">
+                    <h3>UI/UX design</h3>
+                    <p>Designing screens and clickable prototypes.</p>
+                    <ul class="tags">
+                        <li>Figma</li>
+                        <li>Prototyping</li>
+                        <li>Wireframing</li>
+                    </ul>
+                </div>
+
+                <div class="skill-group">
+                    <h3>System development</h3>
+                    <p>Planning and building systems for real use.</p>
+                    <ul class="tags">
+                        <li>System design</li>
+                        <li>Problem solving</li>
+                        <li>Teamwork</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- EDUCATION -->
+    <section id="education">
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Education</h2>
+            </div>
+
+            <div class="education-card">
+                <h3>Bachelor of Science in Information Technology</h3>
+                <p class="school">Central Philippines State University</p>
+                <p>San Carlos Campus, San Carlos City, Negros Occidental</p>
+                <p>Currently in 2nd year</p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- PROJECTS -->
+    <section id="projects">
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Projects</h2>
+                <p>Some of my school and personal work.</p>
+            </div>
+
+            <div class="filters" role="group" aria-label="Filter projects">
+                <button class="filter" type="button" data-filter="all" aria-pressed="true">All</button>
+                <button class="filter" type="button" data-filter="system" aria-pressed="false">System</button>
+                <button class="filter" type="button" data-filter="mobile" aria-pressed="false">Mobile</button>
+                <button class="filter" type="button" data-filter="design" aria-pressed="false">Design</button>
+                <button class="filter" type="button" data-filter="web" aria-pressed="false">Web</button>
+            </div>
+
+            <div class="projects">
+
+                <article class="project" data-category="system" data-key="fun-run">
+                    <div class="project-top" aria-hidden="true">🏃</div>
+                    <div class="project-content">
+                        <h3>Fun Run System</h3>
+                        <p class="project-type">System project</p>
+                        <p>
+                            A system for managing a fun run event, from
+                            participant registration to organizing event information.
+                        </p>
+                        <button class="project-btn" type="button">View details</button>
+                        <ul class="tags">
+                            <li>System design</li>
+                            <li>Registration</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="project" data-category="mobile" data-key="kodular">
+                    <div class="project-top" aria-hidden="true">📱</div>
+                    <div class="project-content">
+                        <h3>Kodular App</h3>
+                        <p class="project-type">Mobile app</p>
+                        <p>
+                            An Android mobile app built with Kodular, using
+                            visual blocks to design the screens and program how
+                            the app works.
+                        </p>
+                        <button class="project-btn" type="button">View details</button>
+                        <ul class="tags">
+                            <li>Kodular</li>
+                            <li>Android</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="project" data-category="design" data-key="figma">
+                    <div class="project-top" aria-hidden="true">🎨</div>
+                    <div class="project-content">
+                        <h3>Figma Prototype</h3>
+                        <p class="project-type">UI/UX design</p>
+                        <p>
+                            A clickable app design made in Figma, showing the
+                            screens, layout and user flow before development.
+                        </p>
+                        <button class="project-btn" type="button">View details</button>
+                        <ul class="tags">
+                            <li>Figma</li>
+                            <li>Prototyping</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="project" data-category="web" data-key="website">
+                    <div class="project-top" aria-hidden="true">🌐</div>
+                    <div class="project-content">
+                        <h3>Personal Website</h3>
+                        <p class="project-type">Web development</p>
+                        <p>
+                            This responsive portfolio, built with HTML and CSS
+                            to present my skills, education and projects.
+                        </p>
+                        <button class="project-btn" type="button">View details</button>
+                        <ul class="tags">
+                            <li>HTML</li>
+                            <li>CSS</li>
+                        </ul>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- CONTACT -->
+    <section id="contact">
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Contact me</h2>
+                <p>Open to opportunities, collaborations and questions.</p>
+            </div>
+
+            <div class="contact-wrap">
+
+                <div class="contact-box">
+
+                    <div class="contact-item">
+                        <span>Email</span>
+                        <a href="mailto:rymrkmateo@gmail.com">rymrkmateo@gmail.com</a>
+                    </div>
+
+                    <div class="contact-item">
+                        <span>Phone</span>
+                        <a href="tel:09614522033">09614522033</a>
+                    </div>
+
+                    <div class="contact-item">
+                        <span>Location</span>
+                        <strong>San Carlos City, Negros Occidental, Philippines</strong>
+                    </div>
+
+                    <div class="contact-item">
+                        <span>Quick copy</span>
+                        <button class="copy-btn" type="button" id="copyEmail">Copy email</button>
+                    </div>
+
+                </div>
+
+                <form class="contact-form" id="contactForm" novalidate>
+                    <h3>Send me a message</h3>
+
+                    <div class="field">
+                        <label for="name">Your name</label>
+                        <input id="name" name="name" type="text" autocomplete="name" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+
+                    <button class="btn" type="submit">Open in my email app</button>
+                    <p class="form-note" id="formNote" role="status"></p>
+                </form>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 Raymark Mateo Satingasin. All rights reserved.</p>
+    </footer>
+
+
+    <dialog id="projectDialog" aria-labelledby="dialogTitle">
+        <button class="icon-btn dialog-close" id="dialogClose" type="button" aria-label="Close details">✕</button>
+        <div class="dialog-body" id="dialogBody"></div>
+    </dialog>
+
+    <button class="icon-btn to-top" id="toTop" type="button" aria-label="Back to top">↑</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
