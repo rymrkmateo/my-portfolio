@@ -24,6 +24,21 @@
         try { localStorage.setItem("theme", next); } catch (e) {}
     });
 
+    /* ---------- Hide links you have not filled in yet ---------- */
+    // Any link whose address still contains "YOUR-" stays hidden,
+    // so visitors never see a broken link.
+    document.querySelectorAll('a[href*="YOUR-"]').forEach(function (a) {
+        var holder = a.closest("li, .contact-item") || a;
+        holder.hidden = true;
+    });
+
+    /* ---------- Project screenshots: fall back to the icon if missing ---------- */
+    document.querySelectorAll(".project-top img").forEach(function (img) {
+        function drop() { img.remove(); }
+        img.addEventListener("error", drop);
+        if (img.complete && img.naturalWidth === 0) drop();
+    });
+
     /* ---------- Mobile menu ---------- */
     var menu = document.getElementById("menu");
     var menuBtn = document.getElementById("menuToggle");
@@ -124,35 +139,52 @@
     });
 
     /* ---------- Project details dialog ---------- */
-    // Edit these details so they match your real projects.
+    // Each key matches a data-key in index.html. Edit any line that is not accurate.
     var details = {
-        "fun-run": {
-            title: "Fun Run System",
-            type: "System project",
-            text: "A system for managing a fun run event, from participant registration to organizing event information.",
-            points: ["Participant registration", "Event information management", "Built as a school system project"],
-            tools: ["System design", "Registration"]
+        "funrun": {
+            title: "FUNRUN Registration System",
+            type: "Web app · Group project",
+            text: "A web app for registering fun run participants, with a password-protected admin dashboard for managing them.",
+            points: [
+                "Registration form that saves participants to a Supabase database",
+                "Admin dashboard with a participant table, processing queue, activity history and name lookup",
+                "Uses data structures and algorithms such as a queue, stack, BST, searching and sorting",
+                "Built and presented with a group of four"
+            ],
+            tools: ["React", "Supabase", "Data structures"]
         },
-        "kodular": {
-            title: "Kodular App",
+        "quiz": {
+            title: "Quiz Competition",
             type: "Mobile app",
-            text: "An Android mobile app built with Kodular, using visual blocks to design the screens and program how the app works.",
-            points: ["Screens designed in the Kodular designer", "Logic built with blocks", "Tested on an Android device"],
-            tools: ["Kodular", "Android"]
+            text: "A quiz app where players pick a subject, answer ten questions and see how they ranked.",
+            points: [
+                "Three subjects with ten questions each: English, Math and Filipino",
+                "Score messages from Excellent! to Keep Practicing!",
+                "Leaderboard saved with TinyDB, with a button to clear it"
+            ],
+            tools: ["Kodular", "TinyDB"]
+        },
+        "dashboard": {
+            title: "CRUD Dashboard",
+            type: "Web app · Backend",
+            text: "A dashboard for creating, viewing, editing and deleting records, running on an Express server with a Supabase database.",
+            points: [
+                "Express backend connected to a Supabase database",
+                "Full create, read, update and delete (CRUD) for records",
+                "Based on the admin dashboard from the FUNRUN project"
+            ],
+            tools: ["Express", "Supabase", "CRUD"]
         },
         "figma": {
             title: "Figma Prototype",
             type: "UI/UX design",
             text: "A clickable app design made in Figma, showing the screens, layout and user flow before development.",
-            points: ["Screen layouts and components", "Clickable user flow", "Designed before development"],
+            points: [
+                "Screen layouts and components",
+                "Clickable user flow",
+                "Designed before development"
+            ],
             tools: ["Figma", "Prototyping"]
-        },
-        "website": {
-            title: "Personal Website",
-            type: "Web development",
-            text: "This responsive portfolio, built with HTML, CSS and JavaScript to present my skills, education and projects.",
-            points: ["Responsive on phones and desktops", "Light and dark themes", "Filterable projects"],
-            tools: ["HTML", "CSS", "JavaScript"]
         }
     };
 
@@ -210,7 +242,9 @@
     });
 
     /* ---------- Contact: copy email + mailto form ---------- */
-    var email = "raymarksatingasin09@gmail.com";
+    // The email address is read from the Email link in index.html,
+    // so there is only one place to change it.
+    var email = document.getElementById("emailLink").textContent.trim();
     var note = document.getElementById("formNote");
     var copyBtn = document.getElementById("copyEmail");
 

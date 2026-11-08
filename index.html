@@ -3,9 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio of Raymark Mateo Satingasin, BSIT student focused on web development, mobile apps and UI design.">
+    <meta name="description" content="Portfolio of Raymark Mateo Satingasin, BSIT student building web apps with React and Supabase, Kodular mobile apps and UI designs.">
+    <meta name="theme-color" content="#f6f8fb" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0a1426" media="(prefers-color-scheme: dark)">
 
     <title>Raymark Mateo Satingasin | Portfolio</title>
+
+    <!-- Link preview (Facebook, Messenger, LinkedIn).
+         After you deploy, replace YOUR-SITE-URL with your real site address. -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Raymark Mateo Satingasin | Portfolio">
+    <meta property="og:description" content="BSIT student building web apps, mobile apps and UI designs.">
+    <meta property="og:image" content="https://YOUR-SITE-URL/raymark.jpg">
+    <meta name="twitter:card" content="summary">
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231a62d6'/%3E%3Ctext x='32' y='45' font-family='Arial' font-size='38' font-weight='700' text-anchor='middle' fill='white'%3ER%3C/text%3E%3C/svg%3E">
+
+    <!-- Applies the saved theme before the page paints, so dark mode does not flash white -->
+    <script>
+        try {
+            var t = localStorage.getItem("theme") ||
+                (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+            document.documentElement.setAttribute("data-theme", t);
+        } catch (e) {}
+    </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,10 +36,12 @@
 
 <body>
 
+    <a class="skip-link" href="#main">Skip to content</a>
+
     <div class="progress" id="progress"></div>
 
     <!-- NAVIGATION -->
-    <nav>
+    <nav aria-label="Main">
         <div class="container nav-inner">
             <a href="#home" class="logo">Raymark<span>.</span></a>
 
@@ -37,6 +60,7 @@
         </div>
     </nav>
 
+    <main id="main">
 
     <!-- HOME -->
     <section id="home">
@@ -45,7 +69,7 @@
             <div class="hero-text">
                 <h1>Raymark Mateo Satingasin</h1>
 
-                <p class="hero-role">BSIT student &amp; <span class="typed" id="typed" aria-label="web developer">web developer</span></p>
+                <p class="hero-role">BSIT student &amp; <span class="typed" id="typed" aria-hidden="true">web developer</span><span class="sr-only">web developer</span></p>
 
                 <p>
                     I'm an Information Technology student who builds websites,
@@ -54,12 +78,19 @@
 
                 <div class="hero-actions">
                     <a href="#projects" class="btn">View my projects</a>
-                    <a href="#contact" class="btn btn-outline">Contact me</a>
+                    <a href="Raymark-Satingasin-Resume.pdf" class="btn btn-outline" download>Download resume</a>
                 </div>
+
+                <!-- Replace YOUR-USERNAME with your real profile names.
+                     Links that still contain "YOUR-" stay hidden automatically. -->
+                <ul class="social">
+                    <li><a href="https://github.com/rymrkmateo" target="_blank" rel="noopener">GitHub</a></li>
+                    <li><a href="https://www.linkedin.com/in/YOUR-USERNAME" target="_blank" rel="noopener">LinkedIn</a></li>
+                </ul>
             </div>
 
             <div class="profile">
-                <img src="raymark.jpg" alt="Portrait of Raymark Mateo Satingasin">
+                <img src="images/raymark.jpg" alt="Portrait of Raymark Mateo Satingasin" width="300" height="300">
             </div>
 
         </div>
@@ -78,16 +109,17 @@
 
                 <div class="about-text">
                     <p>
-                        I'm a 2nd year Information Technology student who enjoys
-                        learning how software and computer systems work, then turning
-                        that knowledge into projects people can actually use.
+                        I'm a 2nd year Information Technology student who likes
+                        turning a rough idea into something people can actually use,
+                        from the database behind it to the screens in front of it.
                     </p>
 
                     <p>
-                        My recent work covers a fun run management system, a mobile
-                        app built with Kodular, and a Figma prototype. I want to keep
-                        sharpening my programming skills and grow into a professional
-                        developer.
+                        So far I've built a fun run registration system with an admin
+                        dashboard using React and Supabase, a CRUD dashboard on an
+                        Express backend, and an Android quiz app with Kodular.
+                        I'm looking for chances to keep learning on real projects
+                        and grow into a professional developer.
                     </p>
                 </div>
 
@@ -95,7 +127,7 @@
                     <li><strong>Course</strong>BS Information Technology</li>
                     <li><strong>Year level</strong>2nd year</li>
                     <li><strong>School</strong>Central Philippines State University</li>
-                    <li><strong>Interests</strong>Web development, mobile apps, UI design</li>
+                    <li><strong>Main tools</strong>React, Supabase, Express, Kodular, Figma</li>
                 </ul>
 
             </div>
@@ -116,11 +148,24 @@
 
                 <div class="skill-group">
                     <h3>Web development</h3>
-                    <p>Building responsive pages and websites.</p>
+                    <p>Building responsive, interactive websites and web apps.</p>
                     <ul class="tags">
                         <li>HTML</li>
                         <li>CSS</li>
+                        <li>JavaScript</li>
+                        <li>React</li>
                         <li>Responsive design</li>
+                    </ul>
+                </div>
+
+                <div class="skill-group">
+                    <h3>Backend &amp; data</h3>
+                    <p>Storing data and managing it through admin tools.</p>
+                    <ul class="tags">
+                        <li>Supabase</li>
+                        <li>Express</li>
+                        <li>CRUD</li>
+                        <li>Data structures</li>
                     </ul>
                 </div>
 
@@ -129,6 +174,7 @@
                     <p>Creating Android apps with block-based tools.</p>
                     <ul class="tags">
                         <li>Kodular</li>
+                        <li>TinyDB</li>
                         <li>App logic</li>
                         <li>App testing</li>
                     </ul>
@@ -141,16 +187,6 @@
                         <li>Figma</li>
                         <li>Prototyping</li>
                         <li>Wireframing</li>
-                    </ul>
-                </div>
-
-                <div class="skill-group">
-                    <h3>System development</h3>
-                    <p>Planning and building systems for real use.</p>
-                    <ul class="tags">
-                        <li>System design</li>
-                        <li>Problem solving</li>
-                        <li>Teamwork</li>
                     </ul>
                 </div>
 
@@ -178,7 +214,10 @@
     </section>
 
 
-    <!-- PROJECTS -->
+    <!-- PROJECTS
+         Screenshots: put your images in an "images" folder using the file names below.
+         If an image is missing, the card shows its icon instead.
+         Links: replace YOUR-USERNAME / YOUR-SITE-URL. Links that still contain "YOUR-" stay hidden. -->
     <section id="projects">
         <div class="container">
 
@@ -189,51 +228,92 @@
 
             <div class="filters" role="group" aria-label="Filter projects">
                 <button class="filter" type="button" data-filter="all" aria-pressed="true">All</button>
-                <button class="filter" type="button" data-filter="system" aria-pressed="false">System</button>
+                <button class="filter" type="button" data-filter="web" aria-pressed="false">Web</button>
                 <button class="filter" type="button" data-filter="mobile" aria-pressed="false">Mobile</button>
                 <button class="filter" type="button" data-filter="design" aria-pressed="false">Design</button>
-                <button class="filter" type="button" data-filter="web" aria-pressed="false">Web</button>
             </div>
 
             <div class="projects">
 
-                <article class="project" data-category="system" data-key="fun-run">
-                    <div class="project-top" aria-hidden="true">🏃</div>
+                <article class="project" data-category="web" data-key="funrun">
+                    <div class="project-top">
+                        <span class="project-icon" aria-hidden="true">🏃</span>
+                        <img src="images/funrun.png" alt="Screenshot of the FUNRUN registration page" width="640" height="360" loading="lazy" decoding="async">
+                    </div>
                     <div class="project-content">
-                        <h3>Fun Run System</h3>
-                        <p class="project-type">System project</p>
+                        <h3>FUNRUN Registration System</h3>
+                        <p class="project-type">Web app · Group project</p>
                         <p>
-                            A system for managing a fun run event, from
-                            participant registration to organizing event information.
+                            A web app for registering fun run participants, with a
+                            password-protected admin dashboard for managing them.
                         </p>
-                        <button class="project-btn" type="button">View details</button>
+                        <div class="project-actions">
+                            <button class="project-btn" type="button">View details</button>
+                            <a class="project-link" href="https://funrun-system.vercel.app/" target="_blank" rel="noopener">Live demo</a>
+                            <a class="project-link" href="https://github.com/rymrkmateo/funrun" target="_blank" rel="noopener">Source code</a>
+                        </div>
                         <ul class="tags">
-                            <li>System design</li>
-                            <li>Registration</li>
+                            <li>React</li>
+                            <li>Supabase</li>
+                            <li>Data structures</li>
                         </ul>
                     </div>
                 </article>
 
-                <article class="project" data-category="mobile" data-key="kodular">
-                    <div class="project-top" aria-hidden="true">📱</div>
+
+
+                <article class="project" data-category="mobile" data-key="quiz">
+                    <div class="project-top">
+                        <span class="project-icon" aria-hidden="true">📝</span>
+                        <img src="images/quiz.png" alt="Screenshot of the Quiz Competition mobile app" width="640" height="360" loading="lazy" decoding="async">
+                    </div>
                     <div class="project-content">
-                        <h3>Kodular App</h3>
+                        <h3>Quiz Competition</h3>
                         <p class="project-type">Mobile app</p>
                         <p>
-                            An Android mobile app built with Kodular, using
-                            visual blocks to design the screens and program how
-                            the app works.
+                            A quiz app with three subjects, instant score messages
+                            and a leaderboard saved on the device.
                         </p>
-                        <button class="project-btn" type="button">View details</button>
+                        <div class="project-actions">
+                            <button class="project-btn" type="button">View details</button>
+                            <a class="project-link" href="https://github.com/rymrkmateo/quiz-game" target="_blank" rel="noopener">Source code</a>
+                        </div>
                         <ul class="tags">
                             <li>Kodular</li>
-                            <li>Android</li>
+                            <li>TinyDB</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="project" data-category="web" data-key="dashboard">
+                    <div class="project-top">
+                        <span class="project-icon" aria-hidden="true">📊</span>
+                        <img src="images/dashboard.png" alt="Screenshot of the CRUD dashboard application" width="640" height="360" loading="lazy" decoding="async">
+                    </div>
+                    <div class="project-content">
+                        <h3>CRUD Dashboard</h3>
+                        <p class="project-type">Web app · Backend</p>
+                        <p>
+                            A dashboard for creating, viewing, editing and deleting
+                            records, running on an Express server with a Supabase database.
+                        </p>
+                        <div class="project-actions">
+                            <button class="project-btn" type="button">View details</button>
+                            <a class="project-link" href="https://github.com/rymrkmateo/funrun-dashboard" target="_blank" rel="noopener">Source code</a>
+                        </div>
+                        <ul class="tags">
+                            <li>Express</li>
+                            <li>Supabase</li>
+                            <li>CRUD</li>
                         </ul>
                     </div>
                 </article>
 
                 <article class="project" data-category="design" data-key="figma">
-                    <div class="project-top" aria-hidden="true">🎨</div>
+                    <div class="project-top">
+                        <span class="project-icon" aria-hidden="true">🎨</span>
+                        <img src="images/figma.png" alt="Screenshot of the Figma prototype" width="640" height="360" loading="lazy" decoding="async">
+                    </div>
                     <div class="project-content">
                         <h3>Figma Prototype</h3>
                         <p class="project-type">UI/UX design</p>
@@ -241,27 +321,13 @@
                             A clickable app design made in Figma, showing the
                             screens, layout and user flow before development.
                         </p>
-                        <button class="project-btn" type="button">View details</button>
+                        <div class="project-actions">
+                            <button class="project-btn" type="button">View details</button>
+                            <a class="project-link" href="https://www.figma.com/proto/1Lljuoslgzm7wZdObxKOnV/FINALS-PROJECT?node-id=11-1607&t=wfXcIgbkEVc5Ot0F-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=11%3A1607" target="_blank" rel="noopener">View in Figma</a>
+                        </div>
                         <ul class="tags">
                             <li>Figma</li>
                             <li>Prototyping</li>
-                        </ul>
-                    </div>
-                </article>
-
-                <article class="project" data-category="web" data-key="website">
-                    <div class="project-top" aria-hidden="true">🌐</div>
-                    <div class="project-content">
-                        <h3>Personal Website</h3>
-                        <p class="project-type">Web development</p>
-                        <p>
-                            This responsive portfolio, built with HTML and CSS
-                            to present my skills, education and projects.
-                        </p>
-                        <button class="project-btn" type="button">View details</button>
-                        <ul class="tags">
-                            <li>HTML</li>
-                            <li>CSS</li>
                         </ul>
                     </div>
                 </article>
@@ -286,17 +352,23 @@
 
                     <div class="contact-item">
                         <span>Email</span>
-                        <a href="mailto:rymrkmateo@gmail.com">rymrkmateo@gmail.com</a>
+                        <a href="mailto:rymrkmateo@gmail.com" id="emailLink">rymrkmateo@gmail.com</a>
                     </div>
 
                     <div class="contact-item">
-                        <span>Phone</span>
-                        <a href="tel:09614522033">09614522033</a>
+                        <span>GitHub</span>
+                        <a href="https://github.com/rymrkmateo" target="_blank" rel="noopener">github.com/rymrkmateo</a>
                     </div>
+
 
                     <div class="contact-item">
                         <span>Location</span>
                         <strong>San Carlos City, Negros Occidental, Philippines</strong>
+                    </div>
+
+                    <div class="contact-item">
+                        <span>Resume</span>
+                        <a href="Raymark-Satingasin-Resume.pdf" download>Download PDF</a>
                     </div>
 
                     <div class="contact-item">
@@ -326,6 +398,8 @@
             </div>
         </div>
     </section>
+
+    </main>
 
 
     <!-- FOOTER -->
