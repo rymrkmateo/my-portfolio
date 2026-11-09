@@ -4,56 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Portfolio of Raymark Mateo Satingasin, BSIT student building web apps with React and Supabase, Kodular mobile apps and UI designs.">
-    <meta name="theme-color" content="#f6f8fb" media="(prefers-color-scheme: light)">
-    <meta name="theme-color" content="#0a1426" media="(prefers-color-scheme: dark)">
-
+    <meta name="theme-color" content="#0B0B0F">
     <title>Raymark Mateo Satingasin | Portfolio</title>
 
-    <!-- Link preview (Facebook, Messenger, LinkedIn).
-         After you deploy, replace YOUR-SITE-URL with your real site address. -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Raymark Mateo Satingasin | Portfolio">
     <meta property="og:description" content="BSIT student building web apps, mobile apps and UI designs.">
-    <meta property="og:image" content="https://YOUR-SITE-URL/raymark.jpg">
-    <meta name="twitter:card" content="summary">
+    <meta property="og:image" content="https://raymark-portfolio.vercel.app/images/raymark.jpg">
+    <meta name="twitter:card" content="summary_large_image">
 
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231a62d6'/%3E%3Ctext x='32' y='45' font-family='Arial' font-size='38' font-weight='700' text-anchor='middle' fill='white'%3ER%3C/text%3E%3C/svg%3E">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%236D28D9'/%3E%3Ctext x='32' y='45' font-family='Arial' font-size='38' font-weight='700' text-anchor='middle' fill='%23FACC15'%3ER%3C/text%3E%3C/svg%3E">
 
-    <!-- Applies the saved theme before the page paints, so dark mode does not flash white -->
     <script>
         try {
-            var t = localStorage.getItem("theme") ||
-                (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+            var t = localStorage.getItem("theme") === "light" ? "light" : "dark";
             document.documentElement.setAttribute("data-theme", t);
         } catch (e) {}
     </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600;700" rel="stylesheet">
     <link rel="stylesheet" href="raymark.css">
 </head>
 
 <body>
-
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+<symbol id="i-github" viewBox="0 0 24 24"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></symbol>
+<symbol id="i-facebook" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></symbol>
+<symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></symbol>
+<symbol id="i-youtube" viewBox="0 0 24 24"><path d="M2.5 17a24.1 24.1 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.6 49.6 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.1 24.1 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.6 49.6 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></symbol>
+<symbol id="i-html" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></symbol>
+<symbol id="i-css" viewBox="0 0 24 24"><path d="M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4A1.75 1.75 0 0 1 12 22z"/><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/></symbol>
+<symbol id="i-js" viewBox="0 0 24 24"><path d="M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5c0 1.1.9 2 2 2h1"/><path d="M16 21h1a2 2 0 0 0 2-2v-5c0-1.1.9-2 2-2a2 2 0 0 1-2-2V5a2 2 0 0 0-2-2h-1"/></symbol>
+<symbol id="i-react" viewBox="0 0 24 24"><circle cx="12" cy="12" r="1"/><path d="M20.2 20.2c2.04-2.03.02-7.36-4.5-11.9-4.54-4.52-9.87-6.54-11.9-4.5-2.04 2.03-.02 7.36 4.5 11.9 4.54 4.52 9.87 6.54 11.9 4.5z"/><path d="M15.7 15.7c4.52-4.54 6.54-9.87 4.5-11.9-2.03-2.04-7.36-.02-11.9 4.5-4.52 4.54-6.54 9.87-4.5 11.9 2.03 2.04 7.36.02 11.9-4.5z"/></symbol>
+<symbol id="i-vite" viewBox="0 0 24 24"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></symbol>
+<symbol id="i-cpp" viewBox="0 0 24 24"><rect width="16" height="16" x="4" y="4" rx="2"/><rect width="6" height="6" x="9" y="9"/><path d="M15 2v2M15 20v2M2 15h2M2 9h2M20 15h2M20 9h2M9 2v2M9 20v2"/></symbol>
+<symbol id="i-python" viewBox="0 0 24 24"><polyline points="4 17 10 11 4 5"/><line x1="12" x2="20" y1="19" y2="19"/></symbol>
+<symbol id="i-db" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></symbol>
+<symbol id="i-git" viewBox="0 0 24 24"><line x1="6" x2="6" y1="3" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></symbol>
+<symbol id="i-figma" viewBox="0 0 24 24"><path d="M5 5.5A3.5 3.5 0 0 1 8.5 2H12v7H8.5A3.5 3.5 0 0 1 5 5.5z"/><path d="M12 2h3.5a3.5 3.5 0 1 1 0 7H12z"/><path d="M12 12.5a3.5 3.5 0 1 1 7 0 3.5 3.5 0 1 1-7 0z"/><path d="M5 19.5A3.5 3.5 0 0 1 8.5 16H12v3.5a3.5 3.5 0 1 1-7 0z"/><path d="M5 12.5A3.5 3.5 0 0 1 8.5 9H12v7H8.5A3.5 3.5 0 0 1 5 12.5z"/></symbol>
+</defs></svg>
     <a class="skip-link" href="#main">Skip to content</a>
-
     <div class="progress" id="progress"></div>
 
     <!-- NAVIGATION -->
     <nav aria-label="Main">
         <div class="container nav-inner">
-            <a href="#home" class="logo">Raymark<span>.</span></a>
-
             <ul id="menu">
+                <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#education">Education</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-
             <div class="nav-right">
+                <a class="btn btn-gold btn-sm" href="Raymark-Satingasin-Resume.pdf" download>Download Resume</a>
                 <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch to dark mode">🌙</button>
                 <button class="icon-btn menu-toggle" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu">☰</button>
             </div>
@@ -65,162 +72,79 @@
     <!-- HOME -->
     <section id="home">
         <div class="container hero">
-
             <div class="hero-text">
-                <h1>Raymark Mateo Satingasin</h1>
-
-                <p class="hero-role">BSIT student &amp; <span class="typed" id="typed" aria-hidden="true">web developer</span><span class="sr-only">web developer</span></p>
-
-                <p>
-                    I'm an Information Technology student who builds websites,
-                    mobile apps and system prototypes that solve real problems.
-                </p>
-
+                <h1>Hello, I'm <span class="grad">Raymark Mateo.</span></h1>
+                <p class="hero-role">Web Developer • Programmer • Problem Solver</p>
+                <p>I build modern and responsive websites, turning ideas into functional and meaningful digital solutions.</p>
                 <div class="hero-actions">
-                    <a href="#projects" class="btn">View my projects</a>
-                    <a href="Raymark-Satingasin-Resume.pdf" class="btn btn-outline" download>Download resume</a>
+                    <a href="#projects" class="btn">View My Projects</a>
+                    <a href="#contact" class="btn btn-outline">Contact Me</a>
                 </div>
-
-                <!-- Replace YOUR-USERNAME with your real profile names.
-                     Links that still contain "YOUR-" stay hidden automatically. -->
-                <ul class="social">
-                    <li><a href="https://github.com/rymrkmateo" target="_blank" rel="noopener">GitHub</a></li>
-                    <li><a href="https://www.linkedin.com/in/YOUR-USERNAME" target="_blank" rel="noopener">LinkedIn</a></li>
-                </ul>
+                <ul class="social"><li><a href="https://github.com/rymrkmateo" target="_blank" rel="noopener" aria-label="GitHub"><svg class="ic" aria-hidden="true"><use href="#i-github"/></svg></a></li><li><a href="https://web.facebook.com/rymrkmteo" target="_blank" rel="noopener" aria-label="Facebook"><svg class="ic" aria-hidden="true"><use href="#i-facebook"/></svg></a></li><li><a href="https://www.linkedin.com/in/YOUR-USERNAME" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="ic" aria-hidden="true"><use href="#i-linkedin"/></svg></a></li><li><a href="https://www.youtube.com/@YOUR-CHANNEL" target="_blank" rel="noopener" aria-label="YouTube"><svg class="ic" aria-hidden="true"><use href="#i-youtube"/></svg></a></li></ul>
             </div>
-
             <div class="profile">
-                <img src="images/raymark.jpg" alt="Portrait of Raymark Mateo Satingasin" width="300" height="300">
+                <img src="images/raymark2.png" alt="Portrait of Raymark Mateo Satingasin" width="300" height="375">
             </div>
-
         </div>
     </section>
-
 
     <!-- ABOUT -->
     <section id="about">
         <div class="container">
-
-            <div class="section-title">
-                <h2>About me</h2>
-            </div>
-
+            <div class="section-title"><h2>About me</h2></div>
             <div class="about-grid">
-
+                <img class="about-pic" src="images/raymark.jpg" alt="Raymark Mateo Satingasin" width="300" height="375" loading="lazy">
                 <div class="about-text">
-                    <p>
-                        I'm a 2nd year Information Technology student who likes
-                        turning a rough idea into something people can actually use,
-                        from the database behind it to the screens in front of it.
-                    </p>
-
-                    <p>
-                        So far I've built a fun run registration system with an admin
-                        dashboard using React and Supabase, a CRUD dashboard on an
-                        Express backend, and an Android quiz app with Kodular.
-                        I'm looking for chances to keep learning on real projects
-                        and grow into a professional developer.
-                    </p>
+                    <p>I'm a 2nd year Information Technology student who likes turning a rough idea into something people can actually use, from the database behind it to the screens in front of it.</p>
+                    <p>So far I've built a fun run registration system with an admin dashboard using React and Supabase, a CRUD dashboard on an Express backend, and an Android quiz app with Kodular.</p>
+                    <p id="moreText" hidden>Outside of class I enjoy web development, mobile apps and UI design. My goal is to keep learning on real projects and grow into a professional developer.</p>
+                    <button class="btn btn-outline btn-sm" id="moreBtn" type="button" aria-expanded="false" aria-controls="moreText">Learn More</button>
+                    <ul class="facts">
+                        <li><strong>Course</strong>BS Information Technology</li>
+                        <li><strong>Year level</strong>2nd year</li>
+                        <li><strong>School</strong>Central Philippines State University</li>
+                        <li><strong>Main tools</strong>React, Supabase, Express, Kodular, Figma</li>
+                    </ul>
                 </div>
-
-                <ul class="facts">
-                    <li><strong>Course</strong>BS Information Technology</li>
-                    <li><strong>Year level</strong>2nd year</li>
-                    <li><strong>School</strong>Central Philippines State University</li>
-                    <li><strong>Main tools</strong>React, Supabase, Express, Kodular, Figma</li>
-                </ul>
-
             </div>
         </div>
     </section>
-
 
     <!-- SKILLS -->
     <section id="skills">
         <div class="container">
-
             <div class="section-title">
                 <h2>Skills</h2>
-                <p>Tools and abilities I use in my projects.</p>
+                <p>Technologies I use in my projects. Select one to see the projects that use it.</p>
             </div>
-
-            <div class="skills-container">
-
-                <div class="skill-group">
-                    <h3>Web development</h3>
-                    <p>Building responsive, interactive websites and web apps.</p>
-                    <ul class="tags">
-                        <li>HTML</li>
-                        <li>CSS</li>
-                        <li>JavaScript</li>
-                        <li>React</li>
-                        <li>Responsive design</li>
-                    </ul>
-                </div>
-
-                <div class="skill-group">
-                    <h3>Backend &amp; data</h3>
-                    <p>Storing data and managing it through admin tools.</p>
-                    <ul class="tags">
-                        <li>Supabase</li>
-                        <li>Express</li>
-                        <li>CRUD</li>
-                        <li>Data structures</li>
-                    </ul>
-                </div>
-
-                <div class="skill-group">
-                    <h3>Mobile app development</h3>
-                    <p>Creating Android apps with block-based tools.</p>
-                    <ul class="tags">
-                        <li>Kodular</li>
-                        <li>TinyDB</li>
-                        <li>App logic</li>
-                        <li>App testing</li>
-                    </ul>
-                </div>
-
-                <div class="skill-group">
-                    <h3>UI/UX design</h3>
-                    <p>Designing screens and clickable prototypes.</p>
-                    <ul class="tags">
-                        <li>Figma</li>
-                        <li>Prototyping</li>
-                        <li>Wireframing</li>
-                    </ul>
-                </div>
-
-            </div>
+            <ul class="skills-container">
+                <li><button class="skill-card" type="button" data-skill="HTML"><svg class="ic" aria-hidden="true"><use href="#i-html"/></svg><span>HTML</span></button></li>
+                <li><button class="skill-card" type="button" data-skill="CSS"><svg class="ic" aria-hidden="true"><use href="#i-css"/></svg><span>CSS</span></button></li>
+                <li><button class="skill-card" type="button" data-skill="JavaScript"><svg class="ic" aria-hidden="true"><use href="#i-js"/></svg><span>JavaScript</span></button></li>
+                <li><button class="skill-card" type="button" data-skill="React"><svg class="ic" aria-hidden="true"><use href="#i-react"/></svg><span>React</span></button></li>
+                <li><button class="skill-card" type="button" data-skill="C++"><svg class="ic" aria-hidden="true"><use href="#i-cpp"/></svg><span>C++</span></button></li>
+                <li><button class="skill-card" type="button" data-skill="Supabase"><svg class="ic" aria-hidden="true"><use href="#i-db"/></svg><span>Supabase</span></button></li>
+                <li><button class="skill-card" type="button" data-skill="Figma"><svg class="ic" aria-hidden="true"><use href="#i-figma"/></svg><span>Figma</span></button></li>
+            </ul>
         </div>
     </section>
-
 
     <!-- EDUCATION -->
     <section id="education">
         <div class="container">
-
-            <div class="section-title">
-                <h2>Education</h2>
-            </div>
-
+            <div class="section-title"><h2>Education</h2></div>
             <div class="education-card">
                 <h3>Bachelor of Science in Information Technology</h3>
                 <p class="school">Central Philippines State University</p>
                 <p>San Carlos Campus, San Carlos City, Negros Occidental</p>
                 <p>Currently in 2nd year</p>
             </div>
-
         </div>
     </section>
 
-
-    <!-- PROJECTS
-         Screenshots: put your images in an "images" folder using the file names below.
-         If an image is missing, the card shows its icon instead.
-         Links: replace YOUR-USERNAME / YOUR-SITE-URL. Links that still contain "YOUR-" stay hidden. -->
+    <!-- PROJECTS: screenshots go in the "images" folder. A missing image shows the card icon instead. -->
     <section id="projects">
         <div class="container">
-
             <div class="section-title">
                 <h2>Projects</h2>
                 <p>Some of my school and personal work.</p>
@@ -234,7 +158,6 @@
             </div>
 
             <div class="projects">
-
                 <article class="project" data-category="web" data-key="funrun">
                     <div class="project-top">
                         <span class="project-icon" aria-hidden="true">🏃</span>
@@ -242,25 +165,16 @@
                     </div>
                     <div class="project-content">
                         <h3>FUNRUN Registration System</h3>
-                        <p class="project-type">Web app · Group project</p>
-                        <p>
-                            A web app for registering fun run participants, with a
-                            password-protected admin dashboard for managing them.
-                        </p>
+                        <p class="project-type">Web app, group project</p>
+                        <p>A web app for registering fun run participants, with a password-protected admin dashboard for managing them.</p>
                         <div class="project-actions">
-                            <button class="project-btn" type="button">View details</button>
-                            <a class="project-link" href="https://funrun-system.vercel.app/" target="_blank" rel="noopener">Live demo</a>
-                            <a class="project-link" href="https://github.com/rymrkmateo/funrun" target="_blank" rel="noopener">Source code</a>
+                            <button class="project-btn" type="button">View Project</button>
+                            <a class="project-link" href="https://funrun-system.vercel.app/" target="_blank" rel="noopener">Live Demo</a>
+                            <a class="project-link" href="https://github.com/rymrkmateo/funrun" target="_blank" rel="noopener">View Source Code</a>
                         </div>
-                        <ul class="tags">
-                            <li>React</li>
-                            <li>Supabase</li>
-                            <li>Data structures</li>
-                        </ul>
+                        <ul class="tags"><li>React</li><li>JavaScript</li><li>Supabase</li><li>Data structures</li></ul>
                     </div>
                 </article>
-
-
 
                 <article class="project" data-category="mobile" data-key="quiz">
                     <div class="project-top">
@@ -270,18 +184,12 @@
                     <div class="project-content">
                         <h3>Quiz Competition</h3>
                         <p class="project-type">Mobile app</p>
-                        <p>
-                            A quiz app with three subjects, instant score messages
-                            and a leaderboard saved on the device.
-                        </p>
+                        <p>A quiz app with three subjects, instant score messages and a leaderboard saved on the device.</p>
                         <div class="project-actions">
-                            <button class="project-btn" type="button">View details</button>
-                            <a class="project-link" href="https://github.com/rymrkmateo/quiz-game" target="_blank" rel="noopener">Source code</a>
+                            <button class="project-btn" type="button">View Project</button>
+                            <a class="project-link" href="https://github.com/rymrkmateo/quiz-game" target="_blank" rel="noopener">View Source Code</a>
                         </div>
-                        <ul class="tags">
-                            <li>Kodular</li>
-                            <li>TinyDB</li>
-                        </ul>
+                        <ul class="tags"><li>Kodular</li><li>TinyDB</li></ul>
                     </div>
                 </article>
 
@@ -292,20 +200,13 @@
                     </div>
                     <div class="project-content">
                         <h3>CRUD Dashboard</h3>
-                        <p class="project-type">Web app · Backend</p>
-                        <p>
-                            A dashboard for creating, viewing, editing and deleting
-                            records, running on an Express server with a Supabase database.
-                        </p>
+                        <p class="project-type">Web app, backend</p>
+                        <p>A dashboard for creating, viewing, editing and deleting records, running on an Express server with a Supabase database.</p>
                         <div class="project-actions">
-                            <button class="project-btn" type="button">View details</button>
-                            <a class="project-link" href="https://github.com/rymrkmateo/funrun-dashboard" target="_blank" rel="noopener">Source code</a>
+                            <button class="project-btn" type="button">View Project</button>
+                            <a class="project-link" href="https://github.com/rymrkmateo/funrun-dashboard" target="_blank" rel="noopener">View Source Code</a>
                         </div>
-                        <ul class="tags">
-                            <li>Express</li>
-                            <li>Supabase</li>
-                            <li>CRUD</li>
-                        </ul>
+                        <ul class="tags"><li>Express</li><li>JavaScript</li><li>Supabase</li><li>CRUD</li></ul>
                     </div>
                 </article>
 
@@ -317,96 +218,59 @@
                     <div class="project-content">
                         <h3>Figma Prototype</h3>
                         <p class="project-type">UI/UX design</p>
-                        <p>
-                            A clickable app design made in Figma, showing the
-                            screens, layout and user flow before development.
-                        </p>
+                        <p>A clickable app design made in Figma, showing the screens, layout and user flow before development.</p>
                         <div class="project-actions">
-                            <button class="project-btn" type="button">View details</button>
-                            <a class="project-link" href="https://www.figma.com/proto/1Lljuoslgzm7wZdObxKOnV/FINALS-PROJECT?node-id=11-1607&t=wfXcIgbkEVc5Ot0F-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=11%3A1607" target="_blank" rel="noopener">View in Figma</a>
+                            <button class="project-btn" type="button">View Project</button>
+                            <a class="project-link" href="https://www.figma.com/proto/1Lljuoslgzm7wZdObxKOnV/FINALS-PROJECT?node-id=11-1607&amp;t=wfXcIgbkEVc5Ot0F-1&amp;scaling=scale-down&amp;content-scaling=fixed&amp;page-id=0%3A1&amp;starting-point-node-id=11%3A1607" target="_blank" rel="noopener">View in Figma</a>
                         </div>
-                        <ul class="tags">
-                            <li>Figma</li>
-                            <li>Prototyping</li>
-                        </ul>
+                        <ul class="tags"><li>Figma</li><li>Prototyping</li></ul>
                     </div>
                 </article>
-
             </div>
         </div>
     </section>
 
-
     <!-- CONTACT -->
     <section id="contact">
         <div class="container">
-
             <div class="section-title">
                 <h2>Contact me</h2>
                 <p>Open to opportunities, collaborations and questions.</p>
             </div>
-
             <div class="contact-wrap">
-
                 <div class="contact-box">
-
-                    <div class="contact-item">
-                        <span>Email</span>
-                        <a href="mailto:rymrkmateo@gmail.com" id="emailLink">rymrkmateo@gmail.com</a>
-                    </div>
-
-                    <div class="contact-item">
-                        <span>GitHub</span>
-                        <a href="https://github.com/rymrkmateo" target="_blank" rel="noopener">github.com/rymrkmateo</a>
-                    </div>
-
-
-                    <div class="contact-item">
-                        <span>Location</span>
-                        <strong>San Carlos City, Negros Occidental, Philippines</strong>
-                    </div>
-
-                    <div class="contact-item">
-                        <span>Resume</span>
-                        <a href="Raymark-Satingasin-Resume.pdf" download>Download PDF</a>
-                    </div>
-
-                    <div class="contact-item">
-                        <span>Quick copy</span>
-                        <button class="copy-btn" type="button" id="copyEmail">Copy email</button>
-                    </div>
-
+                    <div class="contact-item"><span>Email</span><a href="mailto:rymrkmateo@gmail.com" id="emailLink">rymrkmateo@gmail.com</a><button class="copy-btn" type="button" id="copyEmail">Copy email</button></div>
+                    <div class="contact-item"><span>Phone</span><strong>0961 452 2033</strong><a class="copy-btn" href="sms:+639614522033">Message</a></div>
+                    <div class="contact-item"><span>Location</span><strong>San Carlos City, Negros Occidental, Philippines</strong></div>
+                    <div class="contact-item"><span>Social</span><ul class="social"><li><a href="https://github.com/rymrkmateo" target="_blank" rel="noopener" aria-label="GitHub"><svg class="ic" aria-hidden="true"><use href="#i-github"/></svg></a></li><li><a href="https://web.facebook.com/rymrkmteo" target="_blank" rel="noopener" aria-label="Facebook"><svg class="ic" aria-hidden="true"><use href="#i-facebook"/></svg></a></li><li><a href="https://www.linkedin.com/in/YOUR-USERNAME" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="ic" aria-hidden="true"><use href="#i-linkedin"/></svg></a></li><li><a href="https://www.youtube.com/@YOUR-CHANNEL" target="_blank" rel="noopener" aria-label="YouTube"><svg class="ic" aria-hidden="true"><use href="#i-youtube"/></svg></a></li></ul></div>
                 </div>
 
                 <form class="contact-form" id="contactForm" novalidate>
                     <h3>Send me a message</h3>
-
-                    <div class="field">
-                        <label for="name">Your name</label>
-                        <input id="name" name="name" type="text" autocomplete="name" required>
-                    </div>
-
-                    <div class="field">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" required></textarea>
-                    </div>
-
-                    <button class="btn" type="submit">Open in my email app</button>
+                    <div class="field"><label for="name">Name</label><input id="name" name="name" type="text" autocomplete="name" required aria-describedby="err-name"><p class="err" id="err-name"></p></div>
+                    <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required aria-describedby="err-email"><p class="err" id="err-email"></p></div>
+                    <div class="field"><label for="subject">Subject</label><input id="subject" name="subject" type="text" required aria-describedby="err-subject"><p class="err" id="err-subject"></p></div>
+                    <div class="field"><label for="message">Message</label><textarea id="message" name="message" required aria-describedby="err-message"></textarea><p class="err" id="err-message"></p></div>
+                    <button class="btn" type="submit">Send Message</button>
                     <p class="form-note" id="formNote" role="status"></p>
                 </form>
-
             </div>
         </div>
     </section>
 
     </main>
 
-
-    <!-- FOOTER -->
     <footer>
-        <p>© 2026 Raymark Mateo Satingasin. All rights reserved.</p>
+        <div class="container foot">
+            <a href="#home" class="logo" aria-label="Back to home"><span class="mono">RM</span></a>
+            <ul class="foot-links" aria-label="Footer">
+                <li><a href="#about">About</a></li><li><a href="#skills">Skills</a></li><li><a href="#projects">Projects</a></li><li><a href="#contact">Contact</a></li>
+            </ul>
+            <ul class="social"><li><a href="https://github.com/rymrkmateo" target="_blank" rel="noopener" aria-label="GitHub"><svg class="ic" aria-hidden="true"><use href="#i-github"/></svg></a></li><li><a href="https://web.facebook.com/rymrkmteo" target="_blank" rel="noopener" aria-label="Facebook"><svg class="ic" aria-hidden="true"><use href="#i-facebook"/></svg></a></li><li><a href="https://www.linkedin.com/in/YOUR-USERNAME" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="ic" aria-hidden="true"><use href="#i-linkedin"/></svg></a></li><li><a href="https://www.youtube.com/@YOUR-CHANNEL" target="_blank" rel="noopener" aria-label="YouTube"><svg class="ic" aria-hidden="true"><use href="#i-youtube"/></svg></a></li></ul>
+            <p>© 2026 Raymark Mateo Satingasin. All rights reserved.</p>
+            <a class="btn btn-outline btn-sm" href="#home">Back to top</a>
+        </div>
     </footer>
-
 
     <dialog id="projectDialog" aria-labelledby="dialogTitle">
         <button class="icon-btn dialog-close" id="dialogClose" type="button" aria-label="Close details">✕</button>
